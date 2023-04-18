@@ -1,3 +1,4 @@
+## THIS IS A TEMPLATE FROM THE MANDATORY ASSIGNMENT
 import sys
 
 print("3")
