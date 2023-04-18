@@ -1,0 +1,8 @@
+**/data/secret
+pycache
+*.class
+*.aux
+*.log
+.DS_Store
+*.pdf
+.idea
