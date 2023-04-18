@@ -1,18 +1,23 @@
 # APS2023Exam
-Kattis problems designed for the course: Algorithmic Problem Solving | ITU 2023 
-**Authors**: Andreas Kongstad, Christian Emil Stender and (Xanado)
+Kattis Exam submission for the course: Algorithmic Problem Solving | 2023 | ITU
+**Group**: D
+**Authors**: Andreas Kongstad, Christian Emil Stender, and Chrisanna Kate Cornish
+**Supervisor**: Jakob Uttenthal Israelsen
 
-# Problem
-A kattis custom kattis problem
-
-## PROBLEM NAME
+# PROBLEM NAME
 Problem description
 
 ### Input
-
+Decribe the input
 ### Output
+Decribe the output
 
 # Solutions to existing problems
 ## Problem 1
+**Link:**
+
 ## Problem 2
+**Link:**
+
 ## Problem 3
+**Link:**
