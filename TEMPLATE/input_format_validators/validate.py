@@ -22,8 +22,8 @@ for _ in range(N):
     t = int(t)
     r = int(r)
 
-    assert 0 < m < 2000
-    assert 0 < t < 500
+    assert 0 < m <= M
+    assert 0 < t <= T
     assert 0 < r < 100
 
 assert sys.stdin.readline() == ""
