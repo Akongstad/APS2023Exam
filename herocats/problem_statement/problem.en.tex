@@ -15,7 +15,8 @@ Choose their missions carefully, time is precious and there are lives needing sa
 
 The input begins with three integers $M$, $T$ and $N$.
 ($0 < M < 2000$) giving the maximum amount of funds in Catcoin the cats have available, ($0 < T < 500$) giving the amount of time they have until it is nap time, and ($0 < N < 50$) giving the total amount of available missions.
-Then follows $N$ lines of the form $m$ $t$ $r$, each giving the monetary cost $m$ with ($0 < m < 2000$), the time consumption $t$ in minutes with ($0 < t < 500$), and the amount of people rescued $r$ with ($ < r < 100$) of the $N$ missions.
+
+Then follows $N$ lines of the form $m$ $t$ $r$, each giving the monetary cost $m$ with ($0 < m <= M$), the time consumption $t$ in minutes with ($0 < t <= T$), and the amount of people rescued $r$ with ($ < r < 100$) of the $N$ missions.
 All missions can only be completed once(!) and missions are always successful - they are superheroes after all.
 
 \section*{Output}
