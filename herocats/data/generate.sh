@@ -1,4 +1,3 @@
-## THIS IS A TEMPLATE FROM THE MANDATORY ASSIGNMENT
 #!/bin/bash
 USE_SCORING=0
 . ../../_testdata_tools/gen.sh
