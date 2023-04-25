@@ -1,4 +1,3 @@
-## THIS IS A TEMPLATE FROM THE MANDATORY ASSIGNMENT
 #! /usr/env/python3
 
 import random
