@@ -1,20 +1,30 @@
-## THIS IS A herocats FROM THE MANDATORY ASSIGNMENT
 import sys
 import re
 
-firstline = sys.stdin.readline()
-assert re.match(r"(0|-?[1-9][0-9]*)\n", firstline), firstline
+firstline = sys.stdin.readline() #Money, time, amount of missions
+assert re.match(r"([1-9][0-9]*) ([1-9][0-9]*) ([1-9][0-9]*)\n", firstline), firstline
 
-n = int(firstline)
-assert 2 < n < 301
+M, T, N = firstline.split()
+M = int(M)
+T = int(T)
+N = int(N)
 
-secondline = sys.stdin.readline()
-assert re.match(r"(0 ?|-?[1-9][0-9]{0,4} )*(0 ?|-?[1-9][0-9]{0,4})\n", secondline), secondline
+assert 0 < M < 2000
+assert 0 < T < 500
+assert 0 < N < 50
 
-array = secondline.split()
+for _ in range(N):
+    secondline = sys.stdin.readline() #Money cost, time spend, people rescued
+    assert re.match(r"([1-9][0-9]*) ([1-9][0-9]*) ([1-9][0-9]*)\n", secondline), secondline
+    
+    m, t, r = secondline.split()
+    m = int(m)
+    t = int(t)
+    r = int(r)
 
-for number in range(len(array)):
-    assert -10001 < number < 10001
+    assert 0 < m <= M
+    assert 0 < t <= T
+    assert 0 < r < 100
 
 assert sys.stdin.readline() == ""
 
