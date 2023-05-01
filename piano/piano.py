@@ -1,4 +1,4 @@
-from collections import defaultdict, deque
+from collections import defaultdict
 from math import floor
 
 WEEKEND = {6, 0}  # Saturday and Sunday
@@ -51,12 +51,12 @@ def flow(source, sink, skip_days):
 
 def build_graph():
     # Build bipartite graph
-    for move_i in moves:  # For each move order
-        graph[0][move_i] += 1  # Add source to move order
-        for day in range(move_i[0], move_i[1] + 1):
-            graph[move_i][day] += 1
+    for move in moves:  # For each move order
+        graph[0][move] += 1  # Add source to move order
+        for day in range(move[0], move[1] + 1):
+            graph[move][day] += 1
             for tuner_i in range(1, floor(p / 2) + 1):
-                tuner_i += 100  # Scale to make sure tuners and move orders are seperate
+                tuner_i += 100  # Scale to make sure tuners and move orders are separate
                 graph[day][tuner_i] = 1  # Add day to tuner
                 graph[tuner_i][-1] = 100  # Add tuner to sink. 100 is capacity
 
