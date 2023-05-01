@@ -29,6 +29,7 @@ from math import floor
 # What if duplicate move orders example: [91,91] and [91,91]? We can just add the capacity of the edge.?
 WEEKEND = {6, 0}  # Saturday and Sunday
 
+
 def dfs(s, t, parent, dfs_visited, skip_days):
     # Base case
     if s == t:
@@ -44,6 +45,7 @@ def dfs(s, t, parent, dfs_visited, skip_days):
             if dfs(i, t, parent, dfs_visited, skip_days):
                 return True
     return False
+
 
 # Edmond-karp bfs based
 # Return true if there is a path from s to t
@@ -79,7 +81,7 @@ def flow(source, sink, skip_days):
     max_flow = 0
 
     # Augment flow while source -> sink exists
-    #while bfs(source, sink, parent, skip_days):
+    # while bfs(source, sink, parent, skip_days):
     while dfs(source, sink, parent, defaultdict(lambda: False), skip_days):
         # Find minimum residual capacity/O find the maximum flow through the path found.
         path_flow = float("Inf")
@@ -112,14 +114,13 @@ if __name__ == '__main__':
         for _ in range(m):
             moves.append(tuple(map(int, input().split())))  # Map with move span
 
-
         # Build bipartite graph
         for move_i in moves:  # For each move order
             graph[0][move_i] += 1  # Add source to move order
             for day in range(move_i[0], move_i[1] + 1):
                 graph[move_i][day] += 1
-                for tuner_i in range(1, floor(p/2)+1):
-                    tuner_i += 100 # Scale to make sure tuners and move orders are seperate
+                for tuner_i in range(1, floor(p / 2) + 1):
+                    tuner_i += 100  # Scale to make sure tuners and move orders are seperate
                     graph[day][tuner_i] = 1  # Add day to tuner
                     graph[tuner_i][-1] = 100  # Add tuner to sink. 100 is maximum
         only_weekdays = flow(0, -1, WEEKEND)

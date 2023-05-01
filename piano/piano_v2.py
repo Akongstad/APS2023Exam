@@ -4,7 +4,8 @@ from math import floor
 
 WEEKEND = {6, 0}  # Saturday and Sunday
 
-# Dinic's algorithm based implementation. O(V^2*E) runtime worst case.
+
+# Dinic's algorithm based implementation. O(V^2*E) runtime worst case. Yet somehow slower than ford-furkerson.
 
 def bfs(adj, s, t, level, skip_days):
     queue = deque()
