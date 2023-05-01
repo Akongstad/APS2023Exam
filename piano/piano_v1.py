@@ -1,9 +1,33 @@
+# 8.4a, Network Flow, Standard
 from collections import defaultdict, deque
 from math import floor
 
-WEEKEND = {6, 0}  # Saturday and Sunday
+# Piano tuners always work in pairs. They can move at most one piano per day.
 
-# This is v1.
+# Input:
+# n <= 100 test cases
+# Each test case:
+# m <= 1000(pianos to be moved) and p <= 2000 (Piano tuners)
+# m lines of move orders:
+# bi and ei with 1 <= bi < ei <= 100.
+# Between the beginnig day bi and the end day ei, piano i must be moved
+
+# Output:
+# "serious trouble" if there is no solution
+# "weekend work" if at least 2 piano tuners have to work on the weekend
+# "fine" if all pianos can be moved without weekend work
+
+# Idea:
+# I want to match piano movers with move orders.
+# Edmond Karp's algorithm with BFS vs DFS.
+# O(E*F). DFS pitfall time complexity depends on the capacity values of the edges. We might only ever be able to push 1 unit og flow in each iteration.
+# BFS. O(V*E^2). Each iteration takes O(E) time. We can have at most O(E) iterations. Each iteration we can find an augmenting path in O(V) time. Strongly polynomial time algorithm.
+# Using BFS ensures that we find the shortest length augmenting path.
+
+# I will implement skip days into the bfs search. The first time we find a path to a day that is not a weekend, we will use that path.
+# If the max flow is less than the number of move orders, we have a problem. We try again, but with weekends.
+# What if duplicate move orders example: [91,91] and [91,91]? We can just add the capacity of the edge.?
+WEEKEND = {6, 0}  # Saturday and Sunday
 
 def dfs(s, t, parent, dfs_visited, skip_days):
     # Base case
@@ -20,7 +44,6 @@ def dfs(s, t, parent, dfs_visited, skip_days):
             if dfs(i, t, parent, dfs_visited, skip_days):
                 return True
     return False
-
 
 # Edmond-karp bfs based
 # Return true if there is a path from s to t
@@ -56,7 +79,7 @@ def flow(source, sink, skip_days):
     max_flow = 0
 
     # Augment flow while source -> sink exists
-    # while bfs(source, sink, parent, skip_days):
+    #while bfs(source, sink, parent, skip_days):
     while dfs(source, sink, parent, defaultdict(lambda: False), skip_days):
         # Find minimum residual capacity/O find the maximum flow through the path found.
         path_flow = float("Inf")
@@ -89,13 +112,14 @@ if __name__ == '__main__':
         for _ in range(m):
             moves.append(tuple(map(int, input().split())))  # Map with move span
 
+
         # Build bipartite graph
         for move_i in moves:  # For each move order
             graph[0][move_i] += 1  # Add source to move order
             for day in range(move_i[0], move_i[1] + 1):
                 graph[move_i][day] += 1
-                for tuner_i in range(1, floor(p / 2) + 1):
-                    tuner_i += 100  # Scale to make sure tuners and move orders are seperate
+                for tuner_i in range(1, floor(p/2)+1):
+                    tuner_i += 100 # Scale to make sure tuners and move orders are seperate
                     graph[day][tuner_i] = 1  # Add day to tuner
                     graph[tuner_i][-1] = 100  # Add tuner to sink. 100 is maximum
         only_weekdays = flow(0, -1, WEEKEND)
