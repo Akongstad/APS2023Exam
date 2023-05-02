@@ -1,3 +1,6 @@
+#import time
+
+#start = time.time()
 #INPUT
 M, T, N = map(int, input().split()) #money, time, number of missions
 #print(M, T, N)
@@ -20,7 +23,10 @@ def solve(money_left, time_left, mission_index):
     
     if mission_index == len(missions): #if no more missions
         return 0 #no people saved
-    
+
+    if money_left < 0 or time_left < 0: #if not enough money or time
+        return 0 #no people saved
+
     mission_cost, time_spend, people_saved = missions[mission_index] #get mission info
     
     if money_left < mission_cost or time_left < time_spend: #if not enough money or time
@@ -28,7 +34,7 @@ def solve(money_left, time_left, mission_index):
         #print(best)
     else:
         best = max(solve(money_left, time_left, mission_index + 1),
-                     solve(money_left-mission_cost, time_left-time_spend, mission_index + 1) + people_saved)  #skip mission or do mission
+                     solve(money_left-mission_cost, time_left-time_spend, mission_index + 1) + people_saved) #skip mission or do mission
         #print(best)
     
     memoization_table[(money_left, time_left, mission_index)] = best #add key and value to dictionary
@@ -36,3 +42,5 @@ def solve(money_left, time_left, mission_index):
 
 #OUTPUT
 print(solve(M, T, 0)) #print answer
+#end = time.time()
+#print(end - start)
