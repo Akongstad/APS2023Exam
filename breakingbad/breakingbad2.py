@@ -10,8 +10,9 @@
 #to divide list between Walter and Jesse
 #else it is not.
 
-### DFS implementation
+### BFS implementation
 
+from collections import deque
 class Graph():
     def __init__(self, N):
         self.nodes = dict()
@@ -36,12 +37,12 @@ def is_bipartite(graph, N):
             #assign source
             assigned[source] = 'Walter'
             #to hold visit list:
-            to_visit = [source]
+            to_visit = deque([source])
             
 
             while len(to_visit) > 0:
-                #print('visit list: ', to_visit)
-                curr = to_visit.pop()
+                #print('visit list', to_visit)
+                curr = to_visit.popleft()
                 #print('current node', curr)
                 col = assigned[curr]
                 oth_col = 'Jesse' if col == 'Walter' else 'Walter'
