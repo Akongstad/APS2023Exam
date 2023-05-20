@@ -1,5 +1,6 @@
 #! /usr/env/python3
 
+'''Greedy solution, will pass some inputs but not others'''
 M, T, N = map(int, input().split(' '))
 #print(M, N, T)
 missions = [0]*N

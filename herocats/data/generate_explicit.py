@@ -1,7 +1,7 @@
 #! /usr/env/python3
 
 '''This test case generates biggest possible test case
-M=1999, T=499, N=49'''
+50M=1999, T=499, N=49'''
 
 import random
 random.seed(42)
