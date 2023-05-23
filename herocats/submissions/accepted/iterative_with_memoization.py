@@ -20,10 +20,6 @@ for i in range(len(missions_sorted)):  # for each mission
     mission_cost, time_spend, people_saved = missions_sorted[i][1]  # get mission info
     for money_left in range(M, mission_cost - 1, -1):  # for each money_left
         for time_left in range(T, time_spend - 1, -1):  # for each time_left
-            # if no more enough money or time
-            if money_left < mission_cost or time_left < time_spend:
-                continue # skip mission
-
             best = max(
                 memoization_table[money_left][time_left],
                 memoization_table[money_left - mission_cost][time_left - time_spend] + people_saved
