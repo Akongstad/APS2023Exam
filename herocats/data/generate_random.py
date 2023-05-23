@@ -7,9 +7,9 @@ random.seed(int(sys.argv[-1]))
 
 def test_case():
     '''This generates a random test case for herocats'''
-    M = random.randrange(1, 10)
-    T = random.randrange(1, 10)
-    N = random.randrange(1, 10)
+    M = random.randrange(1, 200)
+    T = random.randrange(1, 100)
+    N = random.randrange(1, 40)
 
     print(*[M, T, N])
     
