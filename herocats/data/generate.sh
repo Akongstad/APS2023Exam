@@ -19,7 +19,7 @@ tc  random3 generate_random
 tc  random4 generate_random
 tc  random5 generate_random
 tc  edge1 generate_explicit 2 2 1 1
-tc  edge2 generate_explicit 100 200 50 1
-tc  edge3 generate_explicit 100 2000 50 2
-tc  edge4 generate_explicit 100 2000 50 4
-tc  edge5 generate_explicit 100 2000 50 8
+tc  edge2 generate_explicit 150 150 50 1
+tc  edge3 generate_explicit 150 150 50 2
+tc  edge4 generate_explicit 150 150 50 4
+tc  edge5 generate_explicit 150 150 50 8

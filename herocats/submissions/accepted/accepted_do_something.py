@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 def perform_missions(money_cap, time_cap, missions):
     max_rescues = [[0 for _ in range(time_cap + 1)] for _ in range(money_cap + 1)]
 
