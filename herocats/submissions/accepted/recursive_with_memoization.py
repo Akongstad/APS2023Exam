@@ -1,6 +1,6 @@
-#import time
+import time
 
-#start = time.time()
+start = time.time()
 #INPUT
 M, T, N = map(int, input().split()) #money, time, number of missions
 #print(M, T, N)
@@ -24,7 +24,7 @@ def solve(money_left, time_left, mission_index):
     if mission_index == len(missions): #if no more missions
         return 0 #no people saved
 
-    if money_left < 0 or time_left < 0: #if not enough money or time
+    if money_left < 0 or time_left < 0: #if no more enough money or time
         return 0 #no people saved
 
     mission_cost, time_spend, people_saved = missions[mission_index] #get mission info
@@ -42,5 +42,5 @@ def solve(money_left, time_left, mission_index):
 
 #OUTPUT
 print(solve(M, T, 0)) #print answer
-#end = time.time()
-#print(end - start)
+end = time.time()
+print(end - start, "seconds")
