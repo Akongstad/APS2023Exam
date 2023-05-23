@@ -10,7 +10,7 @@ for i in range(N):
     #print(m, t, r)
     missions[i] = [r, m, t]
 
-missions.sort(reverse=True)
+missions.sort(reverse=True) #uses Timsort O(NlogN) in worst case (linear in best case)
 people = 0
 total_cost = 0
 total_time = 0
