@@ -8,6 +8,7 @@ compile generate_random.py
 compile generate_nice.py
 compile generate_notgreedy.py
 compile generate_explicit.py
+compile generate_notrandom.py
 
 # Generate answers to sample cases
 sample 1
@@ -22,4 +23,4 @@ tc  random4 generate_nice 1999 499 49 42
 tc  random5 generate_nice 1999 499 49 42
 tc  greedy generate_notgreedy
 tc  edge1 generate_explicit
-
+tc  edge2 generate_notrandom
