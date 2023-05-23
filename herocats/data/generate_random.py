@@ -3,20 +3,20 @@
 import random
 import sys
 
-random.seed(int(sys.argv[-1])) 
+random.seed(int(sys.argv[-1]))
 
 def test_case():
     '''This generates a random test case for herocats'''
-    M = random.randrange(1, 2000)
-    T = random.randrange(1, 500)
-    N = random.randrange(1, 50) 
+    M = random.randrange(1, 10)
+    T = random.randrange(1, 10)
+    N = random.randrange(1, 10)
 
     print(*[M, T, N])
     
     for _ in range(N):
         m = random.randrange(1, M+1)
         t = random.randrange(1, T+1)
-        r = random.randrange(1,100)
+        r = random.randrange(1,50)
 
         print(*[m, t, r])
 

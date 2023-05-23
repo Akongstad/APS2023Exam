@@ -11,7 +11,7 @@ N = int(N)
 
 assert 0 < M < 2000
 assert 0 < T < 500
-assert 0 < N < 50
+assert 0 < N < 100
 
 for _ in range(N):
     secondline = sys.stdin.readline() #Money cost, time spend, people rescued
