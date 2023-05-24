@@ -2,7 +2,7 @@ import filecmp
 import os
 if __name__ == '__main__':
     generator = "generator.py"
-    solution = "bruteforce.py"  # change this to your solution
+    solution = "../piano.py"  # change this to your solution
     bruteForce = "bruteforce.py"  # change this to your bruteforce solution
     iterations = 1000
 
