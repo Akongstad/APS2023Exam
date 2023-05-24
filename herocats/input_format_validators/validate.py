@@ -11,9 +11,9 @@ M = int(M)
 T = int(T)
 N = int(N)
 
-assert 0 < M < 2000
-assert 0 < T < 500
-assert 0 < N < 100
+assert 0 < M < 251
+assert 0 < T < 126
+assert 0 < N < 101
 
 for _ in range(N):
     secondline = sys.stdin.readline() #Money cost, time spend, people rescued
