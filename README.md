@@ -17,18 +17,16 @@ The Superhero Cats are a team of feline crusaders dedicated to saving people fro
 ### Input
 
 The input begins with three integers $M$, $T$ and $N$, separated by a space.
-\begin{itemize}
-    \item {$M: (0 < M \le 250)$ The maximum amount of Catcoin available.}
-    \item {$T: (0 < T \le 125)$ The amount of time they have until nap time.}
-    \item {$N: (0 < N \le 100)$ The total amount of available missions.}
-\end{itemize}
 
-Then follows $N$ lines of the form: $m$ $t$ $r$ each describing a single mission where:
-\begin{itemize}
-    \item {$m: (0 < m \le M)$ The Catcoin cost}
-    \item {$t: (0 < t \le T)$ The time consumption in minutes}
-    \item {$r: (0 < r \le 50)$ The number of people available for rescue}
-\end{itemize}
+* $M: (0 < M \le 250)$ The maximum amount of Catcoin available.
+* $T: (0 < T \le 125)$ The amount of time they have until nap time.
+* $N: (0 < N \le 100)$ The total amount of available missions.
+
+Then follows $N$ lines of the form: $m$ $t$ $r$, each describing a single mission where:
+
+* $m: (0 < m \le M)$ The Catcoin cost
+* $t: (0 < t \le T)$ The time consumption in minutes
+* $r: (0 < r \le 50)$ The number of people available for rescue
 
 All missions can only be completed once(!) and missions are always successful - they are super heroes after all.
 
