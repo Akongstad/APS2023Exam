@@ -1,5 +1,6 @@
 #! /usr/env/python3
 
+'''Greedy solution, will pass some inputs but not others'''
 M, T, N = map(int, input().split(' '))
 #print(M, N, T)
 missions = [0]*N
@@ -9,7 +10,7 @@ for i in range(N):
     #print(m, t, r)
     missions[i] = [r, m, t]
 
-missions.sort(reverse=True)
+missions.sort(reverse=True) #uses Timsort O(NlogN) in worst case (linear in best case)
 people = 0
 total_cost = 0
 total_time = 0
