@@ -5,10 +5,7 @@ USE_SCORING=0
 use_solution accepted_iterative_space_op.py
 
 compile generate_random.py
-compile generate_nice.py
-compile generate_notgreedy.py
 compile generate_explicit.py
-compile generate_notrandom.py
 
 # Generate answers to sample cases
 sample 1
@@ -25,5 +22,4 @@ tc  edge1 generate_explicit 2 2 1 1
 tc  edge2 generate_explicit 500 100 50 1
 tc  edge3 generate_explicit 500 100 50 2
 tc  edge4 generate_explicit 500 100 50 4
-tc  edge5 generate_explicit 500 100 50 8
-
+tc  edge5 generate_explicit 500 100 50 8s
