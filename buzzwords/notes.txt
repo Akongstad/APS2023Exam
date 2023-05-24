@@ -1,0 +1,18 @@
+Input
+The input consists of a sequence of lines. 
+The last line of input is empty and should not be processed. 
+Each line of input other than the last contains at least one 
+but no more than one thousand uppercase letters and spaces. 
+The spaces are irrelevant and should be ignored.
+
+Note that the last line of the sample input is a blank line.
+
+Output
+For each line of input, output a sequence of lines, 
+giving the number of repetitions of words of length 1, 2, 3, 
+and so on. When you reach a length such that there are no repeated words 
+of that length, output one blank line, 
+do not output anything further for that input line, 
+and move on to the next line of input.
+
+Note that the last line of the sample output is a blank line.
