@@ -30,7 +30,7 @@ for _ in range(N):
 
 # Generate random solutions and store them
 x = []
-for i in range(1000):
+for i in range(10000):
     x.append(randompicker(M, T, N, missions))
 
 #Print best solution found
