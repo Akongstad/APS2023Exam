@@ -1,4 +1,6 @@
+#! /usr/bin/env python3
 # INPUT
+
 M, T, N = map(int, input().split())  # money, time, number of missions
 
 missions = []  # list of tuples (cost, time, people_saved)
@@ -23,7 +25,7 @@ for i in range(len(missions_sorted)):  # for each mission
             best = max(
                 memoization_table[money_left][time_left],
                 memoization_table[money_left - mission_cost][time_left - time_spend] + people_saved
-            ) # skip mission or do mission
+            )  # skip mission or do mission
             memoization_table[money_left][time_left] = best  # update value in the memoization table
 
 # OUTPUT

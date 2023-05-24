@@ -17,7 +17,8 @@ def perform_missions(money_cap, time_cap, mission_i, missions, cache):
         cache[mission_i][time_cap][money_cap] = result
         return result
 
-    perform_rescue = perform_missions(money_cap - cost, time_cap - time_consumed, mission_i - 1, missions, cache) + rescues
+    perform_rescue = perform_missions(money_cap - cost, time_cap - time_consumed, mission_i - 1, missions,
+                                      cache) + rescues
     dont_rescue = perform_missions(money_cap, time_cap, mission_i - 1, missions, cache)
     result = max(perform_rescue, dont_rescue)
 
