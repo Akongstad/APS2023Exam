@@ -1,7 +1,7 @@
 #! /usr/env/python3
 
 '''This test case generates biggest possible test case
-M=1999, T=499, N=49'''
+M=250, T=125, N=100'''
 
 import random
 import sys
@@ -14,5 +14,5 @@ print(x, y, z)
 for _ in range(z):
     mission = [random.randrange(1, ceil(x / bound)),
                random.randrange(1, ceil(y / bound)),
-               random.randrange(1, 50)]
+               random.randrange(1, 51)]
     print(*mission)
