@@ -4,11 +4,15 @@
 M=1999, T=499, N=49'''
 
 import random
-random.seed(42)
-print("1999 499 49")
+import sys
+from math import floor, ceil
 
-for _ in range(49):
-    mission = [random.randrange(1, 2000), 
-               random.randrange(1,500), 
-               random.randrange(1,50)]
+random.seed(42)
+x, y, z, bound = map(int, sys.argv[1:-1])
+print(x, y, z)
+
+for _ in range(z):
+    mission = [random.randrange(1, ceil(x / bound)),
+               random.randrange(1, ceil(y / bound)),
+               random.randrange(1, 50)]
     print(*mission)
