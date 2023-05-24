@@ -22,4 +22,4 @@ tc  edge1 generate_explicit 2 2 1 1
 tc  edge2 generate_explicit 500 100 50 1
 tc  edge3 generate_explicit 500 100 50 2
 tc  edge4 generate_explicit 500 100 50 4
-tc  edge5 generate_explicit 500 100 50 8
+tc  edge5 generate_explicit 500 100 50 8s

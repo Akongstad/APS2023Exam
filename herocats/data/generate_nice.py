@@ -15,7 +15,7 @@ def test_case():
     ## get proportions to scale outputs
     #M: 100/2000 = 0.05
     #T: 100/500 = 0.2
-    #weighting 0.4M + 0.8T
+    #weighting 0.4M + 0.6T
 
     for _ in range(N):
         m = random.randrange(1, M+1)
@@ -28,7 +28,7 @@ def test_case():
 
         #number of people generated is now proportional 
         #to money and time available, unless M&T are small
-        r = random.randrange(0, R)
+        r = random.randrange(1, R)
         print(*[m, t ,r])
 
 
