@@ -12,19 +12,23 @@ Kattis Exam submission for the course: Algorithmic Problem Solving | 2023 | ITU
 
 # Superhero Cats
 
-The Superhero Cats are a team of feline crusaders dedicated to saving
-people from perilous situations! They have a limited amount of time and
-money to devote to critical life-saving missions. They need to prioritise
-their efforts to maximise the number of people they can save. Each mission
-can only be completed once by the team and some missions will have to
-fall by the wayside. Choose their missions carefully, time is precious and
-there are lives needing saving!
+The Superhero Cats are a team of feline crusaders dedicated to saving people from perilous situations! They have a limited amount of time and Catcoin to devote to critical life-saving missions. They need to prioritise their efforts to maximise the number of people they can save. Each mission can only be completed once by the team and some missions will have to fall by the wayside. Choose their missions carefully, time is precious and there are lives needing saving!
 
 ### Input
 
-The input begins with three integers $M$, $T$ and $N$. ($0 < M < 2000$) giving the maximum amount of funds in Catcoin the cats have available, ($0 < T < 500$) giving the amount of time they have until it is nap time, and ($0 < N < 50$) giving the total amount of available missions.
+The input begins with three integers $M$, $T$ and $N$, separated by a space.
+\begin{itemize}
+    \item {$M: (0 < M \le 250)$ The maximum amount of Catcoin available.}
+    \item {$T: (0 < T \le 125)$ The amount of time they have until nap time.}
+    \item {$N: (0 < N \le 100)$ The total amount of available missions.}
+\end{itemize}
 
-Then follows $N$ lines of the form $m$, $t$ and $r$, giving the monetary cost $m$ with ($0 < m \le M$), the time consumption $t$ in minutes with ($0 < t \le T$), and the amount of people rescued $r$ with ($0 < r < 100$) of the $N$ missions.
+Then follows $N$ lines of the form: $m$ $t$ $r$ each describing a single mission where:
+\begin{itemize}
+    \item {$m: (0 < m \le M)$ The Catcoin cost}
+    \item {$t: (0 < t \le T)$ The time consumption in minutes}
+    \item {$r: (0 < r \le 50)$ The number of people available for rescue}
+\end{itemize}
 
 All missions can only be completed once(!) and missions are always successful - they are super heroes after all.
 
