@@ -7,7 +7,7 @@ def can_move(tuners, moves, skip_days):
     move_i = 0
     end_times = []
     for day in range(1, 101): # Runtime 100
-        while move_i < len(moves) and moves[move_i][0] <= day: # Runtime (1000*1001)/2
+        while move_i < len(moves) and moves[move_i][0] <= day: # 1000
             heapq.heappush(end_times, moves[move_i][1]) # Runtime heappush: log(len(end_time))
             move_i += 1
         if day % 7 not in skip_days:
