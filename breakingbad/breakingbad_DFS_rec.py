@@ -11,6 +11,7 @@
 #else it is not.
 
 ### DFS recursive implementation
+## Hits recursion depth in largest cases
 
 class Graph():
     def __init__(self, N):
