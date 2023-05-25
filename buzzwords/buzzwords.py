@@ -1,63 +1,32 @@
-ALPHABET_SIZE = 26
+import sys
 
-def mp(c):
-    return ord(c) - ord('A')
 
-class Node:
-    def __init__(self):
-        self.ch = [None] * ALPHABET_SIZE
-        self.c = 0
-        self.d = 0
+def count_repeated_words(line):
+    line = line.strip().replace(" ", "")
+    output_lines = []
 
-    def insert(self, s, i = 0):
-        while i < len(s) and s[i] == ' ':
-            i += 1
+    for length in range(1, len(line) + 1):
+        repeated_words = set()
+        for i in range(len(line) - length + 1):
+            word = line[i:i+length]
+            if word in line[i+1:]:
+                repeated_words.add(word)
 
-        if i == len(s):
-            self.c += 1
+        if repeated_words:
+            output_lines.append(str(len(repeated_words)))
         else:
-            self.c += 1
-            v = mp(s[i])
-            if self.ch[v] == None:
-                self.ch[v] = Node()
-                self.ch[v].d = self.d + 1
-
-            self.ch[v].insert(s, i + 1)
-
-    def cleanup(self):
-        for i in range(ALPHABET_SIZE):
-            if self.ch[i] != None:
-                self.ch[i].cleanup()
-                del self.ch[i]
-
-    def count(self, count):
-        count[self.d] = max(self.c, count[self.d])
-        for i in range(ALPHABET_SIZE):
-            if self.ch[i] != None:
-                self.ch[i].count(count)
-
-def main():
-    while True:
-        try:
-            s = input().strip()
-        except:
-            break
-        if len(s) == 0:
+            output_lines.append("")
             break
 
-        root = Node()
-        for i in range(len(s)):
-            if s[i] != ' ':
-                root.insert(s, i)
+    return output_lines
 
-        dpth = [0] * (len(s) + 3)
-        root.count(dpth)
-        for i in range(1, len(s) + 2):
-            if dpth[i] > 1:
-                print(dpth[i])
-            else:
-                print()
-                break
 
-if __name__ == "__main__":
-    main()
+for line in sys.stdin:
+    line = line.strip()
+
+    if not line:
+        break
+
+    output = count_repeated_words(line)
+    for line in output:
+        print(line)
