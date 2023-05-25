@@ -28,10 +28,10 @@ struct Node
         count++; 
         int letterIndex = str[index] - 'A';  // Convert letter to index
 
-        if (children[letterIndex] == nullptr)  // If child doesn't exist
+        if (children[letterIndex] == nullptr)  // If child doesn't exist 
         {
-            children[letterIndex] = new Node(); // Create child
-            children[letterIndex]->depth = depth + 1;  // Set depth of child
+            children[letterIndex] = new Node(); // Create child node
+            children[letterIndex]->depth = depth + 1;  // Set depth of child node 
         }
 
         children[letterIndex]->insert(str, index + 1);  // Insert rest of string
