@@ -26,7 +26,7 @@ for _ in range(N):
 
     assert 0 < m <= M
     assert 0 < t <= T
-    assert 0 < r < 100
+    assert 0 < r <= 50
 
 assert sys.stdin.readline() == ""
 

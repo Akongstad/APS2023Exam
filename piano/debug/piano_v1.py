@@ -29,24 +29,6 @@ from math import floor
 # What if duplicate move orders example: [91,91] and [91,91]? We can just add the capacity of the edge.?
 WEEKEND = {6, 0}  # Saturday and Sunday
 
-
-def dfs(s, t, parent, dfs_visited, skip_days):
-    # Base case
-    if s == t:
-        return True
-    dfs_visited[s] = True
-    # Recursive loop
-    for i in graph[s]:
-        if not type(i) is tuple:
-            if -1 < i < 101 and (i % 7) in skip_days:
-                continue
-        if not dfs_visited[i] and graph[s][i] > 0:
-            parent[i] = s
-            if dfs(i, t, parent, dfs_visited, skip_days):
-                return True
-    return False
-
-
 # Edmond-karp bfs based
 # Return true if there is a path from s to t
 def bfs(s, t, parent, skip_days):
@@ -81,8 +63,8 @@ def flow(source, sink, skip_days):
     max_flow = 0
 
     # Augment flow while source -> sink exists
-    # while bfs(source, sink, parent, skip_days):
-    while dfs(source, sink, parent, defaultdict(lambda: False), skip_days):
+    while bfs(source, sink, parent, skip_days):
+
         # Find minimum residual capacity/O find the maximum flow through the path found.
         path_flow = float("Inf")
         s = sink
